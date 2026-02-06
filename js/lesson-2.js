@@ -366,72 +366,72 @@
 // delete(name) - видаляє контакт з заданим ім'ям;
 // updateName(oldName, newName) - зиінює ім'я контакта;
 
-const phonebook = {
-    contacts: [],
-    add(data) {
-        this.contacts.push({
-            name: data.name,
-            email: data.email,
-            category: data.category || 'default',
-            id: this.generateId(),
-            createdAt: this.getDate(),
-        });
-    },
-    list() {
-        console.table(this.contacts);
-    },
-    filtered(category) {
-        const filt = [];
-        for (const contact of this.contacts){
-            if (contact.category === category){
-                filt.push(contact);
-            }
-        }
-        return filt;
-    },
-    delete(name) {
-        for (let i = 0; i < this.contacts.length; i++){
-            if (this.contacts[i].name === name){
-                this.contacts.splice(i,1);
-            }
-        }
-    },
-    updateName(oldName, newName) {
-        for (const contact of this.contacts){
-            if (contact.name === oldName){
-                contact.name = newName;
-            }
-        }
-    },
+// const phonebook = {
+//     contacts: [],
+//     add(data) {
+//         this.contacts.push({
+//             name: data.name,
+//             email: data.email,
+//             category: data.category || 'default',
+//             id: this.generateId(),
+//             createdAt: this.getDate(),
+//         });
+//     },
+//     list() {
+//         console.table(this.contacts);
+//     },
+//     filtered(category) {
+//         const filt = [];
+//         for (const contact of this.contacts){
+//             if (contact.category === category){
+//                 filt.push(contact);
+//             }
+//         }
+//         return filt;
+//     },
+//     delete(name) {
+//         for (let i = 0; i < this.contacts.length; i++){
+//             if (this.contacts[i].name === name){
+//                 this.contacts.splice(i,1);
+//             }
+//         }
+//     },
+//     updateName(oldName, newName) {
+//         for (const contact of this.contacts){
+//             if (contact.name === oldName){
+//                 contact.name = newName;
+//             }
+//         }
+//     },
 
-    generateId() {
-      return "#" + Math.random().toString(36).substring(2, 9);
-    },
-    getDate() {
-      return Date.now();
-    },
-  };
+//     generateId() {
+//       return "#" + Math.random().toString(36).substring(2, 9);
+//     },
+//     getDate() {
+//       return Date.now();
+//     },
+//   };
 
-  phonebook.add({
-  name: "Mango",
-  email: "mango@mail.com",
-  category: "friends",
-});
+//   phonebook.add({
+//   name: "Mango",
+//   email: "mango@mail.com",
+//   category: "friends",
+// });
 
-phonebook.add({
-  name: "Poly",
-  email: "poly@hotmail.com",
-});
-phonebook.add({
-  name: "Katy",
-  email: "katy@hotmail.com",
-  category: "friends",
-});
+// phonebook.add({
+//   name: "Poly",
+//   email: "poly@hotmail.com",
+// });
+// phonebook.add({
+//   name: "Katy",
+//   email: "katy@hotmail.com",
+//   category: "friends",
+// });
 
-console.log(phonebook.contacts);
-phonebook.list();
-console.table(phonebook.filtered('friends'));
-phonebook.delete('Katy');
-phonebook.list();
-phonebook.updateName('Poly','Max');
-phonebook.list();
+// console.log(phonebook.contacts);
+// phonebook.list();
+// console.table(phonebook.filtered('friends'));
+// phonebook.delete('Katy');
+// phonebook.list();
+// phonebook.updateName('Poly','Max');
+// phonebook.list();
